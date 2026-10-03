@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eaglegranite transforms kitchens and bathrooms with custom cabinetry, granite, and quartz in Florida. Request your free estimate.">
+  <meta name="theme-color" content="#171714">
+  <title>Eaglegranite | Kitchen &amp; Bath Remodeling</title>
+  <style>
+    @font-face {
+      font-family: "Caveat";
+      font-style: normal;
+      font-weight: 600 700;
+      font-display: swap;
+      src: url("assets/fonts/caveat-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "DM Sans";
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+      src: url("assets/fonts/dm-sans-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Oswald";
+      font-style: normal;
+      font-weight: 600 700;
+      font-display: swap;
+      src: url("assets/fonts/oswald-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Playfair Display";
+      font-style: normal;
+      font-weight: 500 700;
+      font-display: swap;
+      src: url("assets/fonts/playfair-display-latin.woff2") format("woff2");
+    }
+    :root {
+      color-scheme: dark;
+      --ink: #171714;
+      --ink-soft: #22221e;
+      --cream: #f4f0e8;
+      --muted: #aaa69d;
+      --gold: #c9a66b;
+      --gold-light: #e0c18b;
+      --line: rgba(255, 255, 255, .13);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 28px; height: 1px; background: var(--gold); content: ""; }
+    .section { padding: 104px 0; }
+    .section-heading { max-width: 680px; margin-bottom: 42px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
+    h2 { margin: 15px 0 14px; font-size: clamp(2.35rem, 5vw, 4rem); line-height: 1.08; }
+    .section-heading p, .body-copy { color: var(--muted); line-height: 1.8; }
+
+    .topbar {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      background: #10100e;
+      color: #c7c2b8;
+      font-size: .72rem;
+      letter-spacing: .04em;
+    }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 18px; }
+    .topbar strong {
+      color: #fff1ce;
+      font-size: .84rem;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(255, 221, 156, .85), 0 0 18px rgba(226, 173, 84, .56);
+    }
+    .topbar-contact { display: flex; gap: 22px; }
+    header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(23, 23, 20, .96);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand { position: relative; display: flex; align-items: center; gap: 13px; min-width: max-content; }
+    .brand-mark {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+      filter: drop-shadow(0 0 7px rgba(244, 203, 125, .68)) drop-shadow(0 0 18px rgba(217, 161, 76, .4));
+      animation: logo-glow 3.2s ease-in-out infinite alternate;
+    }
+    .brand::after {
+      position: absolute;
+      top: 5px;
+      left: 63px;
+      color: #fff0c4;
+      font-size: .9rem;
+      text-shadow: 0 0 7px #ffe8b0, 0 0 16px #dba449;
+      animation: sparkle 2.8s ease-in-out infinite;
+      content: "✦";
+      pointer-events: none;
+    }
+    .brand-name {
+      display: grid;
+      gap: 5px;
+      color: #fff5dc;
+      font-family: var(--serif);
+      font-size: 1.34rem;
+      font-weight: 700;
+      line-height: 1;
+      text-shadow: 0 0 9px rgba(255, 226, 173, .52), 0 0 20px rgba(206, 151, 68, .3);
+    }
+    .brand-name small { color: #e3d3b1; font-family: var(--sans); font-size: .62rem; letter-spacing: .19em; text-shadow: 0 0 8px rgba(235, 191, 114, .38); }
+    @keyframes logo-glow {
+      from { filter: drop-shadow(0 0 5px rgba(244, 203, 125, .5)) drop-shadow(0 0 13px rgba(217, 161, 76, .25)); }
+      to { filter: drop-shadow(0 0 10px rgba(255, 228, 175, .92)) drop-shadow(0 0 24px rgba(217, 161, 76, .58)); }
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: .45; transform: scale(.75) rotate(0); }
+      50% { opacity: 1; transform: scale(1.18) rotate(25deg); }
+    }
+    @keyframes headline-glow {
+      from { filter: drop-shadow(0 3px 12px rgba(208, 157, 77, .32)); }
+      to { filter: drop-shadow(0 3px 20px rgba(255, 206, 117, .58)) drop-shadow(0 0 34px rgba(212, 153, 63, .24)); }
+    }
+    @keyframes phone-glow {
+      from { text-shadow: 0 0 9px rgba(255, 227, 176, .44), 0 0 18px rgba(214, 165, 88, .25); }
+      to { text-shadow: 0 0 14px rgba(255, 242, 211, .92), 0 0 28px rgba(239, 188, 99, .68); }
+    }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 35px); color: #dedbd4; font-size: .84rem; }
+    .nav-links a:not(.button):hover { color: var(--gold-light); }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 21px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #1a1915;
+      font-size: .79rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      transition: background .2s, color .2s, transform .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--gold-light); }
+    .button-outline { background: transparent; color: var(--cream); }
+    .button-outline:hover { color: var(--ink); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--cream);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 730px;
+      overflow: hidden;
+      background: #11110f url("assets/eaglegranite/hero-kitchen.jpg") center 48% / cover;
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 78% 29%, rgba(255, 221, 163, .24), transparent 33%),
+        linear-gradient(90deg, rgba(13, 13, 11, .92) 0%, rgba(13, 13, 11, .78) 35%, rgba(13, 13, 11, .38) 64%, rgba(13, 13, 11, .12) 100%),
+        linear-gradient(0deg, rgba(9, 9, 8, .98) 0%, rgba(9, 9, 8, .08) 42%, rgba(9, 9, 8, .08) 100%);
+      content: "";
+    }
+    .hero::after {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 68% 24%, rgba(255, 238, 199, .86) 0 1px, transparent 2px),
+        radial-gradient(circle at 84% 38%, rgba(255, 220, 160, .8) 0 1px, transparent 2px),
+        radial-gradient(circle at 58% 48%, rgba(255, 239, 206, .62) 0 1px, transparent 2px),
+        radial-gradient(circle at 92% 19%, rgba(255, 226, 176, .75) 0 1px, transparent 2px);
+      opacity: .7;
+      pointer-events: none;
+      animation: ambient-sparkle 5s ease-in-out infinite alternate;
+      content: "";
+    }
+    @keyframes ambient-sparkle {
+      from { opacity: .4; }
+      to { opacity: .9; }
+    }
+    .hero-layout {
+      position: relative;
+      min-height: 730px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .hero-free {
+      z-index: 1;
+      align-self: flex-end;
+      display: grid;
+      grid-template-columns: 58px auto;
+      align-items: center;
+      gap: 2px 10px;
+      min-width: 212px;
+      padding: 9px 13px;
+      border: 1px solid rgba(246, 220, 167, .85);
+      background: linear-gradient(135deg, rgba(34, 30, 23, .96), rgba(10, 10, 9, .91));
+      box-shadow: 0 0 24px rgba(218, 172, 94, .22), inset 0 0 15px rgba(249, 221, 168, .08);
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .hero-free img {
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      width: 58px;
+      height: 58px;
+      border: 2px solid #f3d89f;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 12px rgba(242, 204, 133, .55);
+      object-fit: cover;
+    }
+    .hero-free small { color: var(--cream); font-size: .62rem; letter-spacing: .12em; }
+    .hero-free strong {
+      color: #f7dfa9;
+      font-family: "Oswald", Impact, sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.05;
+      text-shadow: 0 0 14px rgba(255, 222, 156, .78), 0 0 30px rgba(218, 164, 78, .44);
+    }
+    .hero-free span { color: #e9e3d8; font-size: .56rem; letter-spacing: .1em; }
+    .hero-main { display: flex; flex: 1; align-items: center; padding: 12px 0 18px; }
+    .hero-content { max-width: 560px; }
+    .hero .eyebrow { color: #e6d8ba; font-size: .68rem; }
+    .hero-slogan {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: min(100%, 425px);
+      margin: 17px 0 10px;
+      color: #fff2d4;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(.84rem, 1.35vw, 1.08rem);
+      font-weight: 600;
+      letter-spacing: .16em;
+      line-height: 1.3;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(255, 225, 170, .6), 0 0 22px rgba(212, 153, 63, .34);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hero-slogan::before, .hero-slogan::after {
+      height: 1px;
+      flex: 1 1 auto;
+      background: linear-gradient(90deg, transparent, #f3d38f);
+      box-shadow: 0 0 8px rgba(248, 211, 143, .8);
+      content: "";
+    }
+    .hero-slogan::after { transform: scaleX(-1); }
+    .hero h1 {
+      margin: 15px 0 13px;
+      background: linear-gradient(180deg, #fff7df 0%, #f4d99f 29%, #c38d45 67%, #f5dfa9 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      font-family: "Oswald", Impact, sans-serif;
+      font-size: clamp(3.1rem, 6vw, 5.6rem);
+      font-weight: 700;
+      line-height: .99;
+      letter-spacing: .015em;
+      text-shadow: 0 2px 0 rgba(255, 240, 195, .08);
+      text-transform: uppercase;
+      filter: drop-shadow(0 3px 16px rgba(208, 157, 77, .42));
+      animation: headline-glow 3.4s ease-in-out infinite alternate;
+    }
+    .hero h1 span { color: transparent; }
+    .hero-copy { max-width: 445px; margin-bottom: 12px; color: #ece7de; font-size: .87rem; line-height: 1.55; }
+    .hero-special {
+      display: inline-block;
+      max-width: 500px;
+      margin-top: 14px;
+      padding: 13px 16px;
+      border: 2px solid #e6c27f;
+      background: linear-gradient(120deg, rgba(42, 32, 17, .96), rgba(20, 19, 17, .94));
+      box-shadow: 0 0 22px rgba(211, 165, 88, .38), inset 0 0 16px rgba(245, 216, 164, .1);
+      color: #fff0c8;
+      font-size: .86rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      line-height: 1.55;
+      text-transform: uppercase;
+    }
+    .hero-services { display: grid; gap: 0; max-width: 390px; }
+    .hero-service {
+      display: flex;
+      min-height: 35px;
+      align-items: center;
+      gap: 11px;
+      border-top: 1px solid rgba(226, 216, 195, .22);
+      color: #f0ece4;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+    .hero-service-icon { width: 25px; color: var(--gold-light); font-size: 1.15rem; text-align: center; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .hero-actions .button { min-height: 42px; }
+    .hero-actions .button, .hero-contact .button {
+      border-color: #e6c27f;
+      background: linear-gradient(135deg, #f4d99e, #c5964e 65%, #e6c27f);
+      box-shadow: 0 0 20px rgba(211, 165, 88, .28);
+    }
+    .hero-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .hero-tile { position: relative; height: 106px; margin: 0; overflow: hidden; border: 1px solid rgba(244, 240, 232, .82); background: #24231f; }
+    .hero-tile img { height: 100%; object-fit: cover; transition: transform .35s; }
+    .hero-tile:hover img { transform: scale(1.04); }
+    .hero-tile figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 16px 6px 6px;
+      background: linear-gradient(transparent, rgba(10, 10, 9, .92));
+      color: #f3eee5;
+      font-size: .57rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .hero-contact {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr auto;
+      align-items: center;
+      gap: 14px;
+      margin-top: 11px;
+      padding: 11px 13px;
+      border: 1px solid rgba(246, 216, 157, .74);
+      background: linear-gradient(110deg, rgba(28, 24, 17, .95), rgba(10, 10, 9, .9) 52%, rgba(46, 34, 17, .92));
+      box-shadow: 0 0 14px rgba(234, 190, 115, .18), 0 0 34px rgba(234, 190, 115, .12), inset 0 0 18px rgba(245, 216, 164, .08);
+    }
+    .hero-phone { display: flex; align-items: center; gap: 10px; }
+    .hero-phone-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fff0c9, #bf8a42);
+      color: #171510;
+      font-size: 1.26rem;
+      box-shadow: 0 0 11px rgba(255, 222, 158, .78), 0 0 22px rgba(218, 164, 78, .43);
+    }
+    .hero-phone small, .hero-location small { display: block; color: #dfd5c3; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-phone strong {
+      color: #fff3d5;
+      font-family: "Oswald", Impact, sans-serif;
+      font-size: clamp(1.4rem, 2.35vw, 1.9rem);
+      letter-spacing: .045em;
+      white-space: nowrap;
+      animation: phone-glow 2.6s ease-in-out infinite alternate;
+    }
+    .hero-location { display: flex; align-items: center; gap: 8px; color: var(--gold-light); }
+    .hero-location span { font-size: 1.15rem; }
+    .hero-location b { display: block; color: #f1eee8; font-size: .72rem; font-weight: 600; }
+    .hero-contact .button { min-height: 40px; padding: 0 13px; font-size: .69rem; }
+    .hero-contact .button:hover, .hero-actions .button:hover {
+      background: linear-gradient(135deg, #fff0cb, #dbb66f 65%, #f2d69b);
+      box-shadow: 0 0 25px rgba(244, 211, 144, .48);
+    }
+    .hero-quality {
+      position: absolute;
+      right: 5%;
+      bottom: 31%;
+      color: #fff0d0;
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.8rem, 3.6vw, 3.1rem);
+      line-height: .84;
+      text-align: center;
+      text-shadow: 0 2px 12px #080807, 0 0 18px rgba(224, 193, 139, .5);
+      transform: rotate(-8deg);
+    }
+    .hero-quality span { display: block; }
+
+    .proof { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #1c1c18; }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .proof-item { min-height: 112px; display: flex; align-items: center; gap: 15px; padding: 20px 22px; border-right: 1px solid var(--line); }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border: 0; }
+    .proof-icon { color: var(--gold-light); font-family: var(--serif); font-size: 1.9rem; }
+    .proof-item strong { display: block; margin-bottom: 4px; font-size: .82rem; }
+    .proof-item small { color: var(--muted); font-size: .71rem; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
+    .service-card { min-height: 400px; position: relative; display: flex; align-items: end; overflow: hidden; background: #292923; }
+    .service-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; transition: transform .55s; }
+    .service-card:hover img { transform: scale(1.045); }
+    .service-card::after { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15, 15, 13, .95), transparent 75%); content: ""; }
+    .service-info { position: relative; z-index: 1; padding: 27px; }
+    .service-info span { color: var(--gold-light); font-size: .7rem; letter-spacing: .14em; }
+    .service-info h3 { margin: 10px 0 8px; font-size: 1.7rem; }
+    .service-info p { max-width: 300px; margin: 0; color: #c8c3b9; font-size: .83rem; line-height: 1.65; }
+
+    .about { background: #201f1b; }
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(40px, 8vw, 100px); }
+    .about-photo { position: relative; padding: 0 28px 28px 0; }
+    .about-photo::after { position: absolute; z-index: 0; right: 0; bottom: 0; width: 72%; height: 67%; border: 1px solid var(--gold); content: ""; }
+    .about-photo img { position: relative; z-index: 1; height: 490px; object-fit: cover; }
+    .about-stamp { position: absolute; z-index: 2; right: -18px; bottom: 52px; width: 116px; height: 116px; display: grid; place-content: center; border-radius: 50%; background: var(--gold); color: var(--ink); text-align: center; }
+    .about-stamp strong { font-family: var(--serif); font-size: 2rem; font-weight: 500; }
+    .about-stamp small { font-size: .59rem; letter-spacing: .11em; text-transform: uppercase; }
+    .about-copy h2 { margin-bottom: 20px; }
+    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; margin: 28px 0 32px; }
+    .about-point { display: flex; align-items: center; gap: 10px; color: #e4dfd5; font-size: .82rem; }
+    .check { color: var(--gold-light); font-size: 1rem; }
+
+    .gallery-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+    .gallery-head .section-heading { margin-bottom: 0; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter {
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--muted);
+      font-size: .73rem;
+      cursor: pointer;
+    }
+    .filter.active, .filter:hover { border-color: var(--gold); color: var(--gold-light); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .project { position: relative; min-height: 270px; overflow: hidden; background: #292923; }
+    .project[hidden] { display: none; }
+    .project img { height: 100%; min-height: 270px; object-fit: cover; transition: transform .45s; }
+    .project:hover img { transform: scale(1.04); }
+    .project-label { position: absolute; right: 0; bottom: 0; left: 0; padding: 35px 18px 17px; background: linear-gradient(transparent, rgba(15,15,13,.9)); }
+    .project-label small { color: var(--gold-light); font-size: .64rem; letter-spacing: .13em; text-transform: uppercase; }
+    .project-label h3 { margin: 5px 0 0; font-size: 1.2rem; }
+
+    .process { background: #201f1b; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 46px; }
+    .step { position: relative; padding: 0 25px 5px 0; }
+    .step:not(:last-child)::after { position: absolute; top: 24px; right: 18px; left: 64px; border-top: 1px solid rgba(201,166,107,.5); content: ""; }
+    .step-number { width: 49px; height: 49px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold-light); font-family: var(--serif); font-size: 1.15rem; }
+    .step h3 { margin: 22px 0 9px; font-size: 1.35rem; }
+    .step p { max-width: 235px; margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.7; }
+
+    .cta { padding: 76px 0; background: var(--gold); color: #1a1915; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+    .cta h2 { max-width: 620px; margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.25rem); }
+    .cta p { margin: 0; color: #393329; }
+    .cta .button { flex: 0 0 auto; border-color: var(--ink); background: var(--ink); color: var(--cream); }
+    .cta .button:hover { background: #302e27; }
+
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
+    .contact-details { display: grid; gap: 22px; margin-top: 32px; }
+    .contact-line { display: flex; gap: 14px; align-items: start; color: var(--muted); font-size: .84rem; line-height: 1.6; }
+    .contact-line b { display: block; margin-bottom: 3px; color: var(--cream); font-weight: 600; }
+    .contact-line i { color: var(--gold-light); font-size: 1.1rem; font-style: normal; }
+    .social-block { display: grid; justify-items: center; gap: 13px; padding: 30px 0 4px; }
+    .social-block p { margin: 0; color: var(--muted); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+    .social-links { display: flex; align-items: center; gap: 12px; }
+    .social-link {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201, 166, 107, .65);
+      border-radius: 50%;
+      color: var(--gold-light);
+      transition: background .2s, color .2s, transform .2s;
+    }
+    .social-link:hover { transform: translateY(-2px); background: var(--gold); color: var(--ink); }
+    .social-link svg { width: 21px; height: 21px; }
+    .social-link .facebook-icon { font-family: Arial, sans-serif; font-size: 25px; font-weight: 700; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .field { display: grid; gap: 8px; }
+    .field-full { grid-column: 1 / -1; }
+    .field label { color: #d8d3c9; font-size: .75rem; }
+    .field input, .field textarea, .field select {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      outline: none;
+      background: #20201c;
+      color: var(--cream);
+    }
+    .field textarea { min-height: 116px; resize: vertical; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--gold); }
+    .contact-form .button { justify-self: start; cursor: pointer; }
+    .form-note { grid-column: 1 / -1; margin: -4px 0 0; color: var(--muted); font-size: .7rem; line-height: 1.5; }
+    footer { padding: 26px 0; border-top: 1px solid var(--line); background: #10100e; color: var(--muted); font-size: .72rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-inner a { color: var(--gold-light); }
+    .footer-inner .social-links { gap: 8px; }
+    .footer-inner .social-link { width: 36px; height: 36px; }
+    .footer-inner .social-link svg { width: 18px; height: 18px; }
+    .footer-inner .social-link .facebook-icon { font-size: 22px; }
+
+    @media (max-width: 850px) {
+      .nav-links { gap: 15px; font-size: .77rem; }
+      .nav-links .button { min-height: 42px; padding: 0 13px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(3), .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
+      .proof-item:nth-child(3) { padding-left: 0; }
+      .about-grid { gap: 45px; }
+      .about-photo img { height: 420px; }
+      .gallery-head { align-items: start; flex-direction: column; }
+      .contact-grid { gap: 40px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 36px, 1160px); }
+      .topbar { min-height: 34px; font-size: .65rem; }
+      .topbar-inner { justify-content: center; }
+      .topbar-inner > span:first-child, .topbar-contact span { display: none; }
+      .topbar-contact { gap: 0; }
+      .nav { min-height: 70px; }
+      .brand { gap: 8px; }
+      .brand-mark { width: 57px; height: 57px; }
+      .brand::after { top: 3px; left: 45px; font-size: .75rem; }
+      .brand-name { font-size: 1.08rem; }
+      .brand-name small { font-size: .48rem; letter-spacing: .14em; }
+      .menu-toggle { display: block; margin-left: auto; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        padding: 14px 18px 20px;
+        border-bottom: 1px solid var(--line);
+        background: #171714;
+      }
+      .nav-links.open { display: grid; }
+      .nav-links a:not(.button) { padding: 9px 0; }
+      .nav-links .button { justify-self: start; margin-top: 5px; }
+      .hero { height: auto; background-position: 57% center; }
+      .hero-layout { height: auto; min-height: 0; padding-top: 13px; padding-bottom: 13px; }
+      .hero-free { grid-template-columns: 45px auto; gap: 1px 7px; min-width: 174px; padding: 6px 9px; }
+      .hero-free img { width: 45px; height: 45px; }
+      .hero-free strong { font-size: 1.55rem; }
+      .hero-main { padding: 11px 0 14px; }
+      .hero-content { max-width: 100%; }
+      .hero .eyebrow { font-size: .58rem; letter-spacing: .13em; }
+      .hero-slogan { gap: 7px; margin: 12px 0 7px; font-size: clamp(.66rem, 3.05vw, .83rem); letter-spacing: .1em; }
+      .hero h1 { margin: 10px 0; font-size: clamp(2.55rem, 11vw, 3.7rem); line-height: 1; }
+      .hero-copy { max-width: 345px; margin-bottom: 8px; font-size: .78rem; line-height: 1.45; }
+      .hero-special { max-width: 100%; margin-top: 10px; padding: 11px 12px; font-size: .72rem; letter-spacing: .045em; }
+      .hero-service { min-height: 31px; gap: 8px; font-size: .59rem; }
+      .hero-service-icon { width: 21px; font-size: 1rem; }
+      .hero-actions { margin-top: 12px; }
+      .hero-actions .button { min-height: 39px; padding: 0 14px; font-size: .68rem; }
+      .hero-showcase { gap: 6px; }
+      .hero-tile { height: 79px; }
+      .hero-tile figcaption { padding: 13px 3px 4px; font-size: .44rem; letter-spacing: .06em; }
+      .hero-contact { grid-template-columns: 1fr auto; gap: 8px; margin-top: 8px; padding: 9px; }
+      .hero-phone { gap: 7px; }
+      .hero-phone-icon { width: 32px; height: 32px; font-size: 1rem; }
+      .hero-phone small, .hero-location small { font-size: .49rem; }
+      .hero-phone strong { font-size: clamp(1.08rem, 4.7vw, 1.35rem); }
+      .hero-location { grid-column: 1; grid-row: 2; }
+      .hero-location span { font-size: .95rem; }
+      .hero-location b { font-size: .62rem; }
+      .hero-contact .button { grid-column: 2; grid-row: 1 / span 2; min-height: 37px; padding: 0 9px; font-size: .59rem; }
+      .section { padding: 76px 0; }
+      .proof-item { min-height: 95px; gap: 10px; padding: 14px 10px; }
+      .proof-icon { font-size: 1.5rem; }
+      .proof-item strong { font-size: .72rem; }
+      .proof-item small { font-size: .63rem; }
+      .services-grid { grid-template-columns: 1fr; gap: 14px; }
+      .service-card { min-height: 350px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-photo { width: calc(100% - 15px); }
+      .about-photo img { height: 365px; }
+      .about-stamp { right: -12px; bottom: 44px; width: 95px; height: 95px; }
+      .about-stamp strong { font-size: 1.65rem; }
+      .about-points { gap: 13px 9px; }
+      .about-point { font-size: .73rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .project, .project img { min-height: 195px; }
+      .project-label { padding: 27px 11px 11px; }
+      .project-label h3 { font-size: .95rem; }
+      .project-label small { font-size: .56rem; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+      .step:not(:last-child)::after { display: none; }
+      .step { padding: 0; }
+      .step h3 { margin-top: 14px; font-size: 1.2rem; }
+      .cta { padding: 55px 0; }
+      .cta-inner { align-items: start; flex-direction: column; }
+      .contact-grid { gap: 35px; }
+      .contact-form { gap: 12px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .hero-quality { display: none; }
+      .hero-free { grid-template-columns: 40px auto; min-width: 160px; }
+      .hero-free img { width: 40px; height: 40px; }
+      .hero-free strong { font-size: 1.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+      .brand-mark, .brand::after, .hero h1, .hero-phone strong { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span>Custom design. Quality you can see.</span>
+      <div class="topbar-contact">
+        <span>Serving all of Florida</span>
+        <a href="tel:+14074039618"><strong>(407) 403-9618</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Eaglegranite, home">
+        <img class="brand-mark" src="assets/eaglegranite/logo-eaglegranite-crop.jpg" alt="Eagle Granite logo">
+        <span class="brand-name">Eaglegranite <small>KITCHENS · BATHS · GRANITE</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="button" href="#contact">Free estimate <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-layout">
+        <div class="hero-free" aria-label="Free estimates throughout Florida">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Ccircle cx='90' cy='90' r='80' fill='%23f4f0e8'/%3E%3Cpath d='M47 103c15-27 35-46 59-54 10 18 16 34 19 48-20 8-36 10-48 17-10 5-20 11-30 18Z' fill='%23caa66a'/%3E%3Cpath d='M70 74c12-22 28-37 47-45 10 15 15 31 15 47-18-3-32 1-43 11-8 7-14 15-19 26-7-12-6-25 0-39Z' fill='%23171714'/%3E%3Ccircle cx='88' cy='83' r='10' fill='%23f4f0e8'/%3E%3C/svg%3E" alt="Eagle Granite bald eagle logo">
+          <small>Free</small>
+          <strong>Estimates</strong>
+          <span>Throughout Florida</span>
+        </div>
+        <div class="hero-main">
+        <div class="hero-content">
+          <span class="eyebrow">Kitchens · Baths · Granite</span>
+          <p class="hero-slogan">Your vision, our work</p>
+          <h1>Kitchens that<br>inspire<br><span>your home.</span></h1>
+          <p class="hero-copy">We create custom cabinets, soft-close systems, porcelain finishes, and quartz surfaces designed to elevate kitchens and bathrooms with lasting quality.</p>
+          <div class="hero-special">Special offer: Star 1800 Sparkling White • 40–50 sq ft kitchen countertops • quartz + labor + sink included</div>
+          <div class="hero-services" aria-label="Our main services">
+            <div class="hero-service"><span class="hero-service-icon" aria-hidden="true">▤</span>Modern custom cabinetry</div>
+            <div class="hero-service"><span class="hero-service-icon" aria-hidden="true">◇</span>Quartz, porcelain &amp; stone surfaces</div>
+            <div class="hero-service"><span class="hero-service-icon" aria-hidden="true">⌂</span>Kitchen remodels &amp; bath renovations</div>
+          </div>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Get your free estimate <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        </div>
+        <div class="hero-quality" aria-hidden="true">Quality<span>in every detail</span></div>
+        <div class="hero-showcase" aria-label="Project highlights">
+          <figure class="hero-tile">
+            <img src="assets/eaglegranite/Screenshot_20261002_090619_Instagram.jpg" alt="Bright remodeled kitchen with an island" fetchpriority="high">
+            <figcaption>Modern designs</figcaption>
+          </figure>
+          <figure class="hero-tile">
+            <img src="assets/eaglegranite/Screenshot_20261002_090625_Instagram.jpg" alt="Contemporary kitchen with custom cabinets and countertops" fetchpriority="high">
+            <figcaption>Custom style</figcaption>
+          </figure>
+          <figure class="hero-tile">
+            <img src="assets/eaglegranite/Screenshot_20261002_090633_Instagram.jpg" alt="Remodeled bathroom with a glass shower" fetchpriority="high">
+            <figcaption>Kitchens &amp; baths</figcaption>
+          </figure>
+        </div>
+        <div class="hero-contact">
+          <a class="hero-phone" href="tel:+14074039618">
+            <span class="hero-phone-icon" aria-hidden="true">☎</span>
+            <span><small>Call us today!</small><strong>(407) 403-9618</strong></span>
+          </a>
+          <div class="hero-location">
+            <span aria-hidden="true">⌖</span>
+            <span><small>Serving</small><b>All of Florida</b></span>
+          </div>
+          <a class="button" href="#contact">Free estimate <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Our commitments">
+      <div class="wrap proof-grid">
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true">✧</span><div><strong>Custom design</strong><small>Made for your space</small></div></div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true">◇</span><div><strong>Quality materials</strong><small>Quartz, porcelain &amp; stone</small></div></div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true">⌂</span><div><strong>Professional installation</strong><small>Care in every detail</small></div></div>
+        <div class="proof-item"><span class="proof-icon" aria-hidden="true">✆</span><div><strong>Free estimate</strong><small>Let’s talk about your project</small></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">What we do</span>
+          <h2>Spaces made<br>to be enjoyed.</h2>
+          <p>From a complete renovation to the finishing touch that transforms a room, we’re with you from the first idea through installation.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <img src="assets/eaglegranite/Screenshot_20261002_090533_Instagram.jpg" alt="Custom kitchen remodel with white cabinetry and quartz details" loading="lazy">
+            <div class="service-info"><span>01 / KITCHENS</span><h3>Custom kitchen remodels</h3><p>Modern cabinetry, soft-close systems, islands, and tailored layouts built around your routine.</p></div>
+          </article>
+          <article class="service-card">
+            <img src="assets/eaglegranite/bathroom-shower.jpg" alt="Remodeled bathroom with a glass shower and stone details" loading="lazy">
+            <div class="service-info"><span>02 / BATHROOMS</span><h3>Elegant bath upgrades</h3><p>Vanities, shower surrounds, and finishes that bring warmth, luxury, and daily comfort.</p></div>
+          </article>
+          <article class="service-card">
+            <img src="assets/eaglegranite/bathroom-vanity-stock.jpg" alt="Light stone countertop installed on a bathroom vanity" loading="lazy">
+            <div class="service-info"><span>03 / SURFACES</span><h3>Quartz &amp; porcelain details</h3><p>Stone and porcelain countertops designed to look refined and stand up to everyday use.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-photo">
+          <img src="assets/eaglegranite/Screenshot_20261002_090519_Instagram.jpg" alt="Renovated kitchen with white cabinetry and a spacious island" loading="lazy">
+          <div class="about-stamp"><strong>Eagle</strong><small>Granite</small></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">One team, one vision</span>
+          <h2>Designed with you.<br>Built for you.</h2>
+          <p class="body-copy">Every home is different, and every project is too. We listen to your ideas, help you choose materials and finishes, and work to make the finished space feel truly yours.</p>
+          <div class="about-points">
+            <div class="about-point"><span class="check">✓</span> Personal attention</div>
+            <div class="about-point"><span class="check">✓</span> Finishes made your way</div>
+            <div class="about-point"><span class="check">✓</span> Professional craftsmanship</div>
+            <div class="about-point"><span class="check">✓</span> Serving all of Florida</div>
+          </div>
+          <a class="button button-outline" href="#contact">Tell us your idea <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="wrap social-block">
+        <p>Follow our work on social media</p>
+        <div class="social-links" aria-label="Eaglegranite social media">
+          <a class="social-link" href="https://pro.tiktok.com/t/ZP9DhgauA1HM3-7HChQ/" target="_blank" rel="noopener noreferrer" aria-label="Eaglegranite on TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.6 7.2a6.3 6.3 0 0 1-4-2.9v9.2a5.6 5.6 0 1 1-5.6-5.6c.4 0 .8 0 1.2.1v3.1a2.5 2.5 0 1 0 1.3 2.2V2h3.1c.2 2 1.7 3.6 4 3.9v3.1Z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/eaglegranite?stkn=Y2dvYjZpcmtiNHhp" target="_blank" rel="noopener noreferrer" aria-label="Eaglegranite on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-link" href="https://www.facebook.com/share/1c77nycRCo/" target="_blank" rel="noopener noreferrer" aria-label="Eaglegranite on Facebook">
+            <span class="facebook-icon" aria-hidden="true">f</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="gallery-head">
+          <div class="section-heading">
+            <span class="eyebrow">Real inspiration</span>
+            <h2>Spaces we’ve<br>transformed.</h2>
+            <p>A selection of kitchen, bathroom, and countertop projects.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" type="button" data-filter="kitchen" aria-pressed="false">Kitchens</button>
+            <button class="filter" type="button" data-filter="bathroom" aria-pressed="false">Bathrooms</button>
+            <button class="filter" type="button" data-filter="detail" aria-pressed="false">Details</button>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <article class="project" data-category="kitchen"><img src="assets/eaglegranite/Screenshot_20261002_090533_Instagram.jpg" alt="Renovated kitchen with an island and dark cabinetry" loading="lazy"><div class="project-label"><small>Kitchen</small><h3>Modern island design</h3></div></article>
+          <article class="project" data-category="bathroom"><img src="assets/eaglegranite/Screenshot_20261002_090537_Instagram.jpg" alt="Glass shower with tile and gold-tone hardware" loading="lazy"><div class="project-label"><small>Bathroom</small><h3>Custom glass shower</h3></div></article>
+          <article class="project" data-category="detail"><img src="assets/eaglegranite/Screenshot_20261002_090545_Instagram.jpg" alt="Commercial bar with a wood surface and stools" loading="lazy"><div class="project-label"><small>Countertops</small><h3>A bar made for gathering</h3></div></article>
+          <article class="project" data-category="kitchen"><img src="assets/eaglegranite/Screenshot_20261002_090519_Instagram.jpg" alt="White kitchen with a spacious island and stainless steel appliances" loading="lazy"><div class="project-label"><small>Kitchen</small><h3>Bright, natural, inviting</h3></div></article>
+          <article class="project" data-category="bathroom"><img src="assets/eaglegranite/Screenshot_20261002_090603_Instagram.jpg" alt="Bathroom vanity with a light stone countertop" loading="lazy"><div class="project-label"><small>Bathroom</small><h3>Stone vanity</h3></div></article>
+          <article class="project" data-category="kitchen"><img src="assets/eaglegranite/Screenshot_20261002_090609_Instagram.jpg" alt="Installed white kitchen cabinets and countertop" loading="lazy"><div class="project-label"><small>Kitchen</small><h3>Custom cabinetry</h3></div></article>
+          <article class="project" data-category="bathroom"><img src="assets/eaglegranite/bathroom-vanity-stock.jpg" alt="Dark bathroom vanity with a white countertop" loading="lazy"><div class="project-label"><small>Bathroom</small><h3>Elegant contrast</h3></div></article>
+          <article class="project" data-category="detail"><img src="assets/eaglegranite/kitchen-outdoor-stock.jpg" alt="Outdoor kitchen with a grill and granite countertop" loading="lazy"><div class="project-label"><small>Outdoor</small><h3>Outdoor living, upgraded</h3></div></article>
+          <article class="project" data-category="kitchen"><img src="assets/eaglegranite/kitchen-light-stock.jpg" alt="Kitchen with white cabinets and countertop" loading="lazy"><div class="project-label"><small>Kitchen</small><h3>Soft, light finishes</h3></div></article>
+          <article class="project" data-category="detail"><img src="assets/eaglegranite/stone-detail-stock.jpg" alt="Detail of a marble bathroom countertop" loading="lazy"><div class="project-label"><small>Detail</small><h3>Natural stone veining</h3></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Simple from the start</span>
+          <h2>From your first idea<br>to enjoying your new space.</h2>
+          <p>A clear process, with communication at every step.</p>
+        </div>
+        <div class="process-grid">
+          <article class="step"><div class="step-number">01</div><h3>Tell us</h3><p>Let’s talk about what you’re looking for, your ideas, and your space.</p></article>
+          <article class="step"><div class="step-number">02</div><h3>Plan it</h3><p>We’ll help you choose materials, finishes, and the right solutions.</p></article>
+          <article class="step"><div class="step-number">03</div><h3>Build it</h3><p>We coordinate the work and take care with every installation detail.</p></article>
+          <article class="step"><div class="step-number">04</div><h3>Enjoy it</h3><p>A renewed space, ready to live in and share.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap cta-inner">
+        <div><h2>Ready to bring your project to life?</h2><p>Tell us what you have in mind. Your estimate is free.</p></div>
+        <a class="button" href="#contact">Let’s talk about your project <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <span class="eyebrow">Let’s get started</span>
+          <h2>Let’s create<br>something special.</h2>
+          <p class="body-copy">Tell us a little about your project. We’ll get in touch to talk it through and prepare a free estimate.</p>
+          <div class="contact-details">
+            <a class="contact-line" href="tel:+14074039618"><i aria-hidden="true">↗</i><span><b>Call us</b>(407) 403-9618</span></a>
+            <div class="contact-line"><i aria-hidden="true">⌖</i><span><b>Service area</b>Florida</span></div>
+            <div class="contact-line"><i aria-hidden="true">✧</i><span><b>Initial consultation</b>Free, no obligation</span></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="What should we call you?" required></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" required></div>
+          <div class="field field-full"><label for="service">What would you like to remodel?</label><select id="service" name="service" required><option value="" disabled selected>Select a service</option><option>Kitchen</option><option>Bathroom</option><option>Countertops / surfaces</option><option>Cabinetry</option><option>Other project</option></select></div>
+          <div class="field field-full"><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="What do you have in mind?"></textarea></div>
+          <button class="button" type="submit">Send via WhatsApp <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Sending opens WhatsApp with your project details so you can start the conversation.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Eaglegranite. All rights reserved.</span>
+      <div class="social-links" aria-label="Eaglegranite social media">
+        <a class="social-link" href="https://pro.tiktok.com/t/ZP9DhgauA1HM3-7HChQ/" target="_blank" rel="noopener noreferrer" aria-label="Eaglegranite on TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.6 7.2a6.3 6.3 0 0 1-4-2.9v9.2a5.6 5.6 0 1 1-5.6-5.6c.4 0 .8 0 1.2.1v3.1a2.5 2.5 0 1 0 1.3 2.2V2h3.1c.2 2 1.7 3.6 4 3.9v3.1Z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/eaglegranite?stkn=Y2dvYjZpcmtiNHhp" target="_blank" rel="noopener noreferrer" aria-label="Eaglegranite on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/share/1c77nycRCo/" target="_blank" rel="noopener noreferrer" aria-label="Eaglegranite on Facebook">
+          <span class="facebook-icon" aria-hidden="true">f</span>
+        </a>
+      </div>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("#nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
+      });
+    });
+
+    document.querySelectorAll(".filter").forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".filter").forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+        document.querySelectorAll(".project").forEach((project) => {
+          project.hidden = filter !== "all" && project.dataset.category !== filter;
+        });
+      });
+    });
+
+    document.querySelector("#contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const message = [
+        "Hello, I’d like a free estimate.",
+        `Name: ${form.get("name")}`,
+        `Phone: ${form.get("phone")}`,
+        `Service: ${form.get("service")}`,
+        `Project: ${form.get("message") || "I’d like to discuss my project."}`
+      ].join("\n");
+      window.open(`https://wa.me/14074039618?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
